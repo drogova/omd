@@ -22,13 +22,11 @@ def print_matrix(matrix: List[List[int]],
 
 def to_play_view(func: Callable[..., Any]) -> Callable[..., Any]:
     """Decorator function to print playground field"""
-
     @functools.wraps(func)
     def decorated(*args, **kwargs) -> Any:
         print(f'Make your move Player {args[0].current_player}:')
         print_matrix(args[0].matrix, args[0]._matrix_size, args[0]._matrix_axis)
         return func(*args, **kwargs)
-
     return decorated
 
 
