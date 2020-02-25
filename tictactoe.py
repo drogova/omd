@@ -109,6 +109,7 @@ class TicTacToeGame:
                 self.current_player = 2
             else:
                 self.current_player = 1
+        print_matrix(self.matrix, self._matrix_size, self._matrix_axis)
         if is_win:
             print(f'\nPlayer {is_win} wins!')
         else:
